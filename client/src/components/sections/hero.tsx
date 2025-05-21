@@ -44,8 +44,8 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
           >
             <img 
-              src="https://pixabay.com/get/gbcf45d0c05df17324fd8604f8d219da66d80d8eeaceb681720d335322268dc90eb8527967db454c23d72cc4a99e26eeb020c9ad5c4008b840616a20b37727931_1280.jpg" 
-              alt="John Doe, UI Engineer" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80" 
+              alt="Zachary Semaan, UI Engineer" 
               className="rounded-full w-64 h-64 object-cover border-8 border-white dark:border-gray-800 shadow-xl" 
             />
           </motion.div>

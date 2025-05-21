@@ -87,8 +87,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white">Email</h4>
-                      <a href="mailto:hello@johndoe.com" className="text-primary hover:text-indigo-700 transition-colors">
-                        hello@johndoe.com
+                      <a href="mailto:semaanza@gmail.com" className="text-primary hover:text-indigo-700 transition-colors">
+                        semaanza@gmail.com
                       </a>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white">Location</h4>
-                      <p className="text-gray-600 dark:text-gray-400">San Francisco, CA</p>
+                      <p className="text-gray-600 dark:text-gray-400">Davisburg, MI 48350</p>
                     </div>
                   </div>
                   

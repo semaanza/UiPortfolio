@@ -62,10 +62,10 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>John Doe | UI Engineer Portfolio</title>
-        <meta name="description" content="Portfolio of John Doe, a UI Engineer specializing in creating beautiful, functional, and accessible user interfaces." />
-        <meta property="og:title" content="John Doe | UI Engineer Portfolio" />
-        <meta property="og:description" content="Portfolio of John Doe, a UI Engineer specializing in creating beautiful, functional, and accessible user interfaces." />
+        <title>Zachary Semaan | UI Engineer Portfolio</title>
+        <meta name="description" content="Portfolio of Zachary Semaan, a UI Engineer specializing in creating beautiful, functional, and accessible user interfaces." />
+        <meta property="og:title" content="Zachary Semaan | UI Engineer Portfolio" />
+        <meta property="og:description" content="Portfolio of Zachary Semaan, a UI Engineer specializing in creating beautiful, functional, and accessible user interfaces." />
       </Helmet>
       
       <motion.main 

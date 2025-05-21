@@ -18,10 +18,10 @@ export default function About() {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Crafting experiences, not just interfaces</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                With over 5 years of experience as a UI Engineer, I specialize in creating beautiful, functional, and accessible user interfaces that help businesses connect with their users.
+                With experience at companies like Net X and United Wholesale Mortgage, I specialize in creating beautiful, functional, and accessible user interfaces that help businesses connect with their users.
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
-                My approach combines technical expertise with design thinking to deliver solutions that not only look great but also provide exceptional user experiences. I'm passionate about clean code, performance optimization, and creating interfaces that delight users.
+                My technical background combined with an eye for design allows me to transform applications by implementing modern, responsive interfaces. I'm passionate about React, TypeScript, and creating seamless user experiences through clean code and performance optimization.
               </p>
               
               <div className="flex flex-wrap gap-4 mb-8">
@@ -36,11 +36,13 @@ export default function About() {
                 <Button className="bg-primary hover:bg-indigo-600 text-white" asChild>
                   <a href="#contact">Let's connect</a>
                 </Button>
-                <Button variant="ghost" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary flex items-center gap-2">
-                  <span>Download Resume</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
+                <Button variant="ghost" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary flex items-center gap-2" asChild>
+                  <a href="/Dev Res 3.27.25.pdf" download="Zachary_Semaan_Resume.pdf">
+                    <span>Download Resume</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                  </a>
                 </Button>
               </div>
             </div>
