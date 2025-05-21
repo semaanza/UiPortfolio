@@ -21,9 +21,11 @@ export default function ResumePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Resume</h1>
-            <Button className="flex items-center gap-2 bg-primary hover:bg-indigo-600">
-              <Download className="h-4 w-4" />
-              <span>Download PDF</span>
+            <Button className="flex items-center gap-2 bg-primary hover:bg-indigo-600" asChild>
+              <a href="/Dev Res 3.27.25.pdf" download="Zachary_Semaan_Resume.pdf">
+                <Download className="h-4 w-4" />
+                <span>Download PDF</span>
+              </a>
             </Button>
           </div>
 

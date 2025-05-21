@@ -26,8 +26,8 @@ export default function Header() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="font-poppins text-xl font-bold text-primary flex items-center space-x-2">
-              <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">JD</span>
-              <span className="dark:text-white">John Doe</span>
+              <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center">ZS</span>
+              <span className="dark:text-white">Zachary Semaan</span>
             </Link>
           </div>
           
