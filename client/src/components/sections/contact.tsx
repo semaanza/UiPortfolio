@@ -113,7 +113,7 @@ export default function Contact() {
                         <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
                           <FaGithub className="text-xl" />
                         </a>
-                        <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                        <a href="https://linkedin.com/in/semaanza" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
                           <FaLinkedin className="text-xl" />
                         </a>
                         <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
