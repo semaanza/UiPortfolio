@@ -33,11 +33,7 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Log current state for debugging
-    console.log("Applying theme:", theme);
-    console.log("Current classes:", root.classList.toString());
-    
-    // Remove both theme classes
+    // Remove both theme classes first
     root.classList.remove("light", "dark");
     
     // Determine which theme to apply
@@ -51,8 +47,19 @@ export function ThemeProvider({
     
     // Apply the theme class
     root.classList.add(appliedTheme);
-    console.log("Applied class:", appliedTheme);
-    console.log("Updated classes:", root.classList.toString());
+    
+    // Force a refresh of the CSS variables by triggering a reflow
+    document.body.style.transition = "background-color 0.3s ease";
+    
+    // Set HTML attribute for tailwind
+    document.documentElement.setAttribute("data-theme", appliedTheme);
+    
+    // Force dark mode to be properly applied by using the attribute as well
+    if (appliedTheme === "dark") {
+      document.documentElement.setAttribute("data-mode", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-mode");
+    }
   }, [theme]);
 
   const value = {

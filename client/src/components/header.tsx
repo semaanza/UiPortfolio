@@ -17,10 +17,13 @@ export default function Header() {
   };
 
   const toggleTheme = () => {
-    console.log("Current theme:", theme);
+    // Directly toggle between light and dark only (no system)
     const newTheme = theme === "dark" ? "light" : "dark";
-    console.log("Setting theme to:", newTheme);
     setTheme(newTheme);
+    
+    // Apply the theme class directly to ensure immediate visual change
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(newTheme);
   };
 
   return (
