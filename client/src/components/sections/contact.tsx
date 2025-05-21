@@ -13,6 +13,10 @@ import { CheckCircle2, Mail, MapPin, Globe } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 
+// Initialize EmailJS 
+// This needs to be replaced with your actual EmailJS public key
+// emailjs.init("YOUR_PUBLIC_KEY");
+
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -44,10 +48,11 @@ export default function Contact() {
     
     setIsSubmitting(true);
     
-    // You'll need to replace these with your actual EmailJS credentials
-    const serviceId = process.env.EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-    const templateId = process.env.EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+    // These will need to be replaced with your actual EmailJS credentials
+    // You can set these up in your environment variables
+    const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+    const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+    const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
     
     // Send the email using EmailJS
     emailjs.send(serviceId, templateId, {
@@ -66,7 +71,7 @@ export default function Contact() {
           description: "Thanks for reaching out. I'll get back to you soon.",
         });
       })
-      .catch((error) => {
+      .catch((error: any) => {
         // Error handling
         console.error('EmailJS error:', error);
         toast({
@@ -226,9 +231,9 @@ export default function Contact() {
                   <Button 
                     type="submit" 
                     className="w-full bg-primary hover:bg-indigo-600 text-white"
-                    disabled={contactMutation.isPending}
+                    disabled={isSubmitting}
                   >
-                    {contactMutation.isPending ? (
+                    {isSubmitting ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         Sending...
