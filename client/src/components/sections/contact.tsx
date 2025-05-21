@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -13,6 +11,7 @@ import { Loader2 } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle2, Mail, MapPin, Globe } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter, FaDribbble } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -25,7 +24,9 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const [formSuccess, setFormSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const formRef = useRef(null);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -37,30 +38,46 @@ export default function Contact() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: (data: ContactFormValues) => {
-      return apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      form.reset();
-      setFormSuccess(true);
-      setTimeout(() => setFormSuccess(false), 5000);
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-    },
-    onError: (error) => {
-      toast({
-        title: "Something went wrong",
-        description: error.message || "Please try again later.",
-        variant: "destructive",
-      });
-    },
-  });
-
   function onSubmit(data: ContactFormValues) {
-    contactMutation.mutate(data);
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    // You'll need to replace these with your actual EmailJS credentials
+    const serviceId = process.env.EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+    const templateId = process.env.EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+    const publicKey = process.env.EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+    
+    // Send the email using EmailJS
+    emailjs.send(serviceId, templateId, {
+      from_name: data.name,
+      from_email: data.email,
+      subject: data.subject,
+      message: data.message,
+    }, publicKey)
+      .then(() => {
+        // Success handling
+        form.reset();
+        setFormSuccess(true);
+        setTimeout(() => setFormSuccess(false), 5000);
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+      })
+      .catch((error) => {
+        // Error handling
+        console.error('EmailJS error:', error);
+        toast({
+          title: "Something went wrong",
+          description: "Please try again later or contact me directly via email.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   }
 
   return (
