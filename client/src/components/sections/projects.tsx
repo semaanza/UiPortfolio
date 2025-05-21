@@ -18,51 +18,51 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Analytics Dashboard",
-      description: "A responsive analytics dashboard with real-time data visualization and customizable widgets.",
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
-      category: ["web", "dashboard"],
-      tags: ["React", "TypeScript", "D3.js"]
+      title: "Zuker Building Website",
+      description: "A custom construction company website showcasing services, projects, and providing customer inquiry capabilities.",
+      imageUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
+      category: ["web"],
+      tags: ["React", "Next.js", "Tailwind CSS"]
     },
     {
       id: 2,
-      title: "Fashion E-commerce App",
-      description: "A mobile shopping experience with personalized recommendations and seamless checkout flow.",
-      imageUrl: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
-      category: ["mobile", "ecommerce"],
-      tags: ["React Native", "Redux", "API Integration"]
+      title: "Cookie Shop Website",
+      description: "An e-commerce website for a cookie shop with product showcasing, online ordering, and payment processing.",
+      imageUrl: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
+      category: ["web", "ecommerce"],
+      tags: ["React", "Next.js", "Tailwind CSS"]
     },
     {
       id: 3,
-      title: "Task Management Platform",
-      description: "A collaborative task management platform with drag-and-drop functionality and real-time updates.",
+      title: "React Core Application Migration",
+      description: "Transformed a legacy application by migrating to React and implementing a modern UI design, improving user experience.",
       imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
       category: ["web"],
-      tags: ["Next.js", "Tailwind CSS", "DnD"]
+      tags: ["React", "TypeScript", "Tanstack Query"]
     },
     {
       id: 4,
-      title: "Financial Management App",
-      description: "A comprehensive financial tracking application with budgeting tools and interactive visualizations.",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
+      title: "Data Visualization Dashboard",
+      description: "A performant data dashboard that efficiently handles millions of rows using advanced virtualization techniques.",
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
       category: ["web", "dashboard"],
-      tags: ["React", "Material UI", "Chart.js"]
+      tags: ["React", "Tanstack Table", "Virtualization"]
     },
     {
       id: 5,
-      title: "Fitness Tracking App",
-      description: "A mobile fitness application with workout tracking, progress visualization, and social features.",
-      imageUrl: "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
-      category: ["mobile"],
-      tags: ["React Native", "Firebase", "Animation"]
+      title: "Company Website Migration",
+      description: "Migrated legacy company websites to NextJS using Contentstack as a headless CMS, improving load times and SEO.",
+      imageUrl: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
+      category: ["web"],
+      tags: ["Next.js", "Contentstack", "SEO Optimization"]
     },
     {
       id: 6,
-      title: "Online Store Platform",
-      description: "A feature-rich e-commerce platform with advanced product filtering and seamless payment integration.",
-      imageUrl: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
-      category: ["web", "ecommerce"],
-      tags: ["Next.js", "GraphQL", "Stripe"]
+      title: "MUI Component Library",
+      description: "Built a comprehensive UI component library using Material UI, enabling rapid development of consistent interfaces.",
+      imageUrl: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=500&q=80",
+      category: ["web"],
+      tags: ["React", "Material UI", "Component Library"]
     }
   ];
 
@@ -135,10 +135,17 @@ export default function Projects() {
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{project.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                    <a href="#" className="text-primary font-medium hover:text-indigo-700 transition-colors flex items-center group">
-                      View Case Study
-                      <ArrowRightIcon className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    {project.id === 1 ? (
+                      <a href="https://zukerbuilding.com" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:text-indigo-700 transition-colors flex items-center group">
+                        Visit Website
+                        <ArrowRightIcon className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    ) : (
+                      <a href="#contact" className="text-primary font-medium hover:text-indigo-700 transition-colors flex items-center group">
+                        Learn More
+                        <ArrowRightIcon className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}

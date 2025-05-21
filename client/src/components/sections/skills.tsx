@@ -8,34 +8,37 @@ export default function Skills() {
       icon: <CodeIcon className="text-primary text-xl" />,
       description: "Building modern, responsive, and performant user interfaces with the latest technologies.",
       items: [
-        "React.js & Next.js",
+        "React & Next.js",
         "JavaScript & TypeScript",
-        "HTML5 & CSS3/SASS",
-        "Responsive Web Design",
-        "State Management (Redux, Context)"
+        "HTML5 & CSS3",
+        "Tailwind CSS",
+        "Material UI (MUI)",
+        "Bootstrap"
       ]
     },
     {
-      title: "UI/UX Design",
-      icon: <PaintbrushVertical className="text-primary text-xl" />,
-      description: "Creating intuitive and visually appealing interfaces that deliver exceptional user experiences.",
+      title: "React Ecosystem",
+      icon: <CodeIcon className="text-primary text-xl" />,
+      description: "Leveraging the React ecosystem to build efficient and scalable frontend applications.",
       items: [
-        "User Interface Design",
-        "Wireframing & Prototyping",
-        "Design Systems",
-        "Figma & Adobe XD",
-        "User Experience Best Practices"
+        "React Hook Form",
+        "Yup Validation",
+        "Redux & RTK Query",
+        "Tanstack Table, Query, Virtual",
+        "Jest Unit Testing",
+        "State Management"
       ]
     },
     {
-      title: "Tools & Methods",
+      title: "Tools & Collaboration",
       icon: <Drill className="text-primary text-xl" />,
       description: "Using modern tools and methodologies to deliver high-quality results efficiently.",
       items: [
-        "Git & Version Control",
-        "Accessibility (WCAG)",
-        "Performance Optimization",
-        "Component-Driven Development",
+        "Node.js",
+        "Git (Github, Gitlab, Bitbucket)",
+        "Jira & Wrike",
+        "Headless CMS (Contentstack, Tina, Sanity)",
+        "Google Analytics & Tag Manager",
         "Agile/Scrum Methodology"
       ]
     },
