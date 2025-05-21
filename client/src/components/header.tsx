@@ -37,7 +37,7 @@ export default function Header() {
             <a href="#skills" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
             <a href="#projects" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
             <a href="#contact" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
-            <a href="#" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors">Resume</a>
+            <Link href="/resume" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors">Resume</Link>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -87,13 +87,13 @@ export default function Header() {
             >
               Contact
             </a>
-            <a 
-              href="#" 
+            <Link
+              href="/resume"
               className="block px-3 py-2 rounded-md font-medium bg-primary text-white hover:bg-indigo-600"
               onClick={closeMenu}
             >
               Resume
-            </a>
+            </Link>
           </div>
         </div>
       )}
