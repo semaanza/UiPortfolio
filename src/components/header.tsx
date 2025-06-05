@@ -45,10 +45,10 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
-            <a href="#skills" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
-            <a href="#projects" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
-            <a href="#contact" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+            <a href="/#about" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+            <a href="/#skills" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Skills</a>
+            <a href="/#projects" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+            <a href="/#contact" className="font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
             <Link href="/resume" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors">Resume</Link>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -72,28 +72,28 @@ export default function Header() {
         <div className="md:hidden bg-white dark:bg-gray-900 shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a 
-              href="#about" 
+              href="/#about" 
               className="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white"
               onClick={closeMenu}
             >
               About
             </a>
             <a 
-              href="#skills" 
+              href="/#skills" 
               className="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white"
               onClick={closeMenu}
             >
               Skills
             </a>
             <a 
-              href="#projects" 
+              href="/#projects" 
               className="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white"
               onClick={closeMenu}
             >
               Projects
             </a>
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white"
               onClick={closeMenu}
             >
