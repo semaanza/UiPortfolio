@@ -1,12 +1,10 @@
-import { createServer } from 'vite'
+#!/usr/bin/env node
+import { spawn } from 'child_process'
 
-const server = await createServer({
-  configFile: './vite.config.ts',
-  server: {
-    port: 5000,
-    host: '0.0.0.0'
-  }
+const vite = spawn('npx', ['vite', '--port', '5000', '--host', '0.0.0.0'], {
+  stdio: 'inherit',
+  shell: true
 })
 
-await server.listen()
-server.printUrls()
+process.on('SIGTERM', () => vite.kill())
+process.on('SIGINT', () => vite.kill())
