@@ -1,17 +1,17 @@
-import { exec } from 'child_process'
+import { createServer } from 'vite'
 
-console.log('Starting frontend-only portfolio...')
-const viteProcess = exec('npx vite --port 5000 --host 0.0.0.0', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error}`)
-    return
-  }
-  console.log(stdout)
-  if (stderr) console.error(stderr)
-})
+async function startServer() {
+  const server = await createServer({
+    server: {
+      port: 5000,
+      host: '0.0.0.0',
+      allowedHosts: 'all'
+    }
+  })
+  
+  await server.listen()
+  server.printUrls()
+  console.log('Frontend-only portfolio ready for Netlify deployment!')
+}
 
-viteProcess.stdout?.pipe(process.stdout)
-viteProcess.stderr?.pipe(process.stderr)
-
-process.on('SIGTERM', () => viteProcess.kill())
-process.on('SIGINT', () => viteProcess.kill())
+startServer().catch(console.error)
